@@ -34,6 +34,20 @@ application {
     mainClass = 'com.example.banking.BankingApplication'
 }
 
+// Propagate -DuseRedis, -DredisHost, -DredisPort passed to Gradle into the app JVM
+tasks.named('run', JavaExec).configure {
+    doFirst {
+        def props = [:]
+        [ 'useRedis', 'redisHost', 'redisPort' ].each { key ->
+            def val = System.getProperty(key)
+            if (val != null) props.put(key, val)
+        }
+        if (!props.isEmpty()) {
+            systemProperties(props)
+        }
+    }
+}
+
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
 }
