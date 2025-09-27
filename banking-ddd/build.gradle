@@ -1,0 +1,54 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'com.example'
+version = '1.0.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.redisson:redisson:3.27.2'
+    implementation 'org.slf4j:slf4j-api:2.0.16'
+    runtimeOnly 'org.slf4j:slf4j-simple:2.0.16'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.11.3'
+    testImplementation 'org.assertj:assertj-core:3.26.3'
+    testImplementation 'org.mockito:mockito-core:5.14.2'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application {
+    mainClass = 'com.example.banking.BankingApplication'
+}
+
+// Propagate -DuseRedis, -DredisHost, -DredisPort passed to Gradle into the app JVM
+tasks.named('run', JavaExec).configure {
+    doFirst {
+        def props = [:]
+        [ 'useRedis', 'redisHost', 'redisPort' ].each { key ->
+            def val = System.getProperty(key)
+            if (val != null) props.put(key, val)
+        }
+        if (!props.isEmpty()) {
+            systemProperties(props)
+        }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
