@@ -1,0 +1,20 @@
+.theme-whatsapp {
+  --primary-color: #128c7e;
+  --background: #e5ddd5;
+  --sent-bubble: #dcf8c6;
+  --received-bubble: #ffffff;
+  --text-color: #303030;
+}
+
+.theme-whatsapp .message-bubble {
+  color: var(--text-color);
+}
+
+.theme-whatsapp .message-bubble.bg-white {
+  background: var(--received-bubble);
+}
+
+.theme-whatsapp .message-bubble.bg-green-100 {
+  background: var(--sent-bubble);
+}
+
