@@ -1,0 +1,92 @@
+/* Microsoft Teams Theme - Corporate Design */
+.theme-teams .chat-simulator {
+  background: #f3f2f1 !important;
+  color: #323130 !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+.theme-teams .chat-header {
+  background: #464775 !important;
+  border-bottom: none !important;
+  color: #ffffff !important;
+  padding: 12px 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.theme-teams .message-bubble {
+  background: #ffffff !important;
+  color: #323130 !important;
+  border-radius: 4px !important;
+  padding: 8px 12px !important;
+  margin: 2px 0 !important;
+  max-width: 70% !important;
+  word-wrap: break-word !important;
+  border: 1px solid #edebe9 !important;
+}
+
+.theme-teams .message-bubble.sent {
+  background: #0078d4 !important;
+  color: #ffffff !important;
+  margin-left: auto !important;
+  border: none !important;
+}
+
+.theme-teams .message-bubble.received {
+  background: #ffffff !important;
+  color: #323130 !important;
+}
+
+.theme-teams .message-author {
+  color: #0078d4 !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  margin-bottom: 2px !important;
+}
+
+.theme-teams .message-bubble.sent .message-author {
+  color: #ffffff !important;
+}
+
+.theme-teams .message-timestamp {
+  color: #605e5c !important;
+  font-size: 11px !important;
+  margin-top: 4px !important;
+  font-weight: 400 !important;
+}
+
+.theme-teams .message-bubble.sent .message-timestamp {
+  color: #ffffff !important;
+  opacity: 0.7 !important;
+}
+
+.theme-teams .typing-indicator {
+  background: #ffffff !important;
+  color: #605e5c !important;
+  border-radius: 4px !important;
+  padding: 8px 12px !important;
+  margin: 2px 0 !important;
+  border: 1px solid #edebe9 !important;
+  font-style: italic !important;
+}
+
+.theme-teams .reaction {
+  background: #f3f2f1 !important;
+  border: 1px solid #edebe9 !important;
+  border-radius: 12px !important;
+  padding: 2px 6px !important;
+  margin: 2px 4px 2px 0 !important;
+  font-size: 12px !important;
+  display: inline-block !important;
+}
+
+.theme-teams .attachment {
+  background: #ffffff !important;
+  border: 1px solid #edebe9 !important;
+  border-radius: 4px !important;
+  padding: 8px !important;
+  margin-top: 4px !important;
+}

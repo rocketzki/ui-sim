@@ -1,20 +1,99 @@
-.theme-whatsapp {
-  --primary-color: #128c7e;
-  --background: #e5ddd5;
-  --sent-bubble: #dcf8c6;
-  --received-bubble: #ffffff;
-  --text-color: #303030;
+/* WhatsApp Theme - Authentic Design */
+.theme-whatsapp.chat-simulator,
+.theme-whatsapp .chat-simulator {
+  background: #e5ddd5 !important;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") !important;
+  color: #000000 !important;
+  border-radius: 0 !important;
+  overflow: hidden !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+}
+
+.theme-whatsapp .chat-header {
+  background: #075e54 !important;
+  border-bottom: none !important;
+  color: #ffffff !important;
+  padding: 12px 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
 }
 
 .theme-whatsapp .message-bubble {
-  color: var(--text-color);
+  background: #ffffff !important;
+  color: #000000 !important;
+  border-radius: 18px !important;
+  padding: 8px 12px !important;
+  margin: 2px 0 !important;
+  max-width: 70% !important;
+  word-wrap: break-word !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1) !important;
+  position: relative !important;
 }
 
-.theme-whatsapp .message-bubble.bg-white {
-  background: var(--received-bubble);
+.theme-whatsapp .message-bubble.sent {
+  background: #dcf8c6 !important;
+  color: #000000 !important;
+  margin-left: auto !important;
+  border-bottom-right-radius: 4px !important;
 }
 
-.theme-whatsapp .message-bubble.bg-green-100 {
-  background: var(--sent-bubble);
+.theme-whatsapp .message-bubble.received {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border-bottom-left-radius: 4px !important;
 }
 
+.theme-whatsapp .message-author {
+  color: #075e54 !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  margin-bottom: 2px !important;
+}
+
+.theme-whatsapp .message-timestamp {
+  color: #667781 !important;
+  font-size: 11px !important;
+  margin-top: 4px !important;
+  text-align: right !important;
+  font-weight: 400 !important;
+}
+
+.theme-whatsapp .message-bubble.sent .message-timestamp {
+  color: #4a4a4a !important;
+}
+
+.theme-whatsapp .message-bubble.sent .message-timestamp::after {
+  content: ' ✓✓' !important;
+  color: #4fc3f7 !important;
+}
+
+.theme-whatsapp .typing-indicator {
+  background: #ffffff !important;
+  color: #667781 !important;
+  border-radius: 18px !important;
+  padding: 8px 16px !important;
+  margin: 2px 0 !important;
+  border-bottom-left-radius: 4px !important;
+  font-style: italic !important;
+  position: relative !important;
+}
+
+.theme-whatsapp .reaction {
+  background: #f0f0f0 !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 12px !important;
+  padding: 2px 6px !important;
+  margin: 2px 4px 2px 0 !important;
+  font-size: 12px !important;
+  display: inline-block !important;
+}
+
+.theme-whatsapp .attachment {
+  background: #f8f8f8 !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 8px !important;
+  padding: 8px !important;
+  margin-top: 4px !important;
+}

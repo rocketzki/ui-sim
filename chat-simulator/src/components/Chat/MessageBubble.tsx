@@ -23,13 +23,30 @@ export const MessageBubble: React.FC<Props> = ({ message, isSent }) => {
   return (
     <div
       ref={ref}
-      className={`message-bubble max-w-[75%] px-3 py-2 rounded-lg text-sm ${
-        isSent ? 'bg-green-100 ml-auto rounded-tl-lg' : 'bg-white rounded-tr-lg'
-      } shadow`}
+      className={`message-bubble ${isSent ? 'sent' : 'received'}`}
     >
-      <div>{message.content}</div>
+      <div className="message-author">{message.sender}</div>
+      <div className="message-content">{message.content}</div>
       {message.timestamp && (
-        <div className="text-[10px] text-gray-500 mt-1 text-right">{message.timestamp}</div>
+        <div className="message-timestamp">{message.timestamp}</div>
+      )}
+      {message.reactions && message.reactions.length > 0 && (
+        <div className="reactions mt-2">
+          {message.reactions.map((reaction, index) => (
+            <span key={index} className="reaction">
+              {reaction.emoji} {reaction.count}
+            </span>
+          ))}
+        </div>
+      )}
+      {message.attachments && message.attachments.length > 0 && (
+        <div className="attachments mt-2">
+          {message.attachments.map((attachment, index) => (
+            <div key={index} className="attachment">
+              📎 {attachment.name} ({attachment.size})
+            </div>
+          ))}
+        </div>
       )}
     </div>
   );

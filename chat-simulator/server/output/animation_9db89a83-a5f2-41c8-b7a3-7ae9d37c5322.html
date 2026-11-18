@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Animation - 🔍 The Missing Case</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #f0f0f0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            max-width: 600px;
+        }
+        .animation-frame {
+            width: 400px;
+            height: 600px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin: 10px 0;
+            background: white;
+        }
+        .controls {
+            margin: 20px 0;
+            text-align: center;
+        }
+        button {
+            background: #007AFF;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0 10px;
+        }
+        button:hover {
+            background: #0056CC;
+        }
+        .info {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #007AFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎬 Chat Animation</h1>
+        <div class="info">
+            <h3>🔍 The Missing Case</h3>
+            <p><strong>Theme:</strong> whatsapp</p>
+            <p><strong>Messages:</strong> 9</p>
+            <p><strong>Frames:</strong> 30</p>
+            <p><strong>Delay:</strong> 1000ms</p>
+        </div>
+        
+        <div class="controls">
+            <button onclick="playAnimation()">▶️ Play Animation</button>
+            <button onclick="pauseAnimation()">⏸️ Pause</button>
+            <button onclick="resetAnimation()">🔄 Reset</button>
+        </div>
+        
+        <div class="animation-frame" id="animationFrame">
+            <img id="frameImage" src="" alt="Animation Frame" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+        
+        <div class="controls">
+            <button onclick="downloadFrames()">📥 Download All Frames</button>
+        </div>
+    </div>
+
+    <script>
+        const frames = ["frame_000.png","frame_001.png","frame_002.png","frame_003.png","frame_004.png","frame_005.png","frame_006.png","frame_007.png","frame_008.png","frame_009.png","frame_010.png","frame_011.png","frame_012.png","frame_013.png","frame_014.png","frame_015.png","frame_016.png","frame_017.png","frame_018.png","frame_019.png","frame_020.png","frame_021.png","frame_022.png","frame_023.png","frame_024.png","frame_025.png","frame_026.png","frame_027.png","frame_028.png","frame_029.png"];
+        let currentFrame = 0;
+        let animationInterval = null;
+        const frameDelay = 1000;
+        
+        function updateFrame() {
+            const frameImage = document.getElementById('frameImage');
+            frameImage.src = frames[currentFrame];
+            frameImage.alt = `Frame ${currentFrame + 1} of ${frames.length}`;
+        }
+        
+        function playAnimation() {
+            if (animationInterval) return;
+            
+            animationInterval = setInterval(() => {
+                currentFrame = (currentFrame + 1) % frames.length;
+                updateFrame();
+            }, frameDelay);
+        }
+        
+        function pauseAnimation() {
+            if (animationInterval) {
+                clearInterval(animationInterval);
+                animationInterval = null;
+            }
+        }
+        
+        function resetAnimation() {
+            pauseAnimation();
+            currentFrame = 0;
+            updateFrame();
+        }
+        
+        function downloadFrames() {
+            frames.forEach((frame, index) => {
+                const link = document.createElement('a');
+                link.href = frame;
+                link.download = `frame_${String(index).padStart(3, '0')}.png`;
+                link.click();
+            });
+        }
+        
+        // Initialize with first frame
+        updateFrame();
+    </script>
+</body>
+</html>

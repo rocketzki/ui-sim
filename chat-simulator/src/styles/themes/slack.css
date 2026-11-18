@@ -1,0 +1,93 @@
+/* Slack Theme - Professional Workspace Design */
+.theme-slack .chat-simulator {
+  background: #ffffff !important;
+  color: #1d1c1d !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  border: 1px solid #e8e8e8 !important;
+  font-family: 'Slack-Lato', 'Helvetica Neue', Helvetica, 'Segoe UI', Tahoma, Arial, sans-serif !important;
+}
+
+.theme-slack .chat-header {
+  background: #f8f8f8 !important;
+  border-bottom: 1px solid #e8e8e8 !important;
+  color: #1d1c1d !important;
+  padding: 12px 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.theme-slack .message-bubble {
+  background: #ffffff !important;
+  color: #1d1c1d !important;
+  border-radius: 4px !important;
+  padding: 8px 12px !important;
+  margin: 2px 0 !important;
+  max-width: 70% !important;
+  word-wrap: break-word !important;
+  border-left: 3px solid transparent !important;
+}
+
+.theme-slack .message-bubble.sent {
+  background: #ffffff !important;
+  color: #1d1c1d !important;
+  margin-left: auto !important;
+  border-left: 3px solid #007a5a !important;
+}
+
+.theme-slack .message-bubble.received {
+  background: #ffffff !important;
+  color: #1d1c1d !important;
+  border-left: 3px solid #e01e5a !important;
+}
+
+.theme-slack .message-author {
+  color: #1264a3 !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  margin-bottom: 2px !important;
+}
+
+.theme-slack .message-bubble.sent .message-author {
+  color: #007a5a !important;
+}
+
+.theme-slack .message-timestamp {
+  color: #616061 !important;
+  font-size: 11px !important;
+  margin-top: 4px !important;
+  font-weight: 400 !important;
+}
+
+.theme-slack .message-bubble.sent .message-timestamp {
+  color: #616061 !important;
+}
+
+.theme-slack .typing-indicator {
+  background: #f8f8f8 !important;
+  color: #616061 !important;
+  border-radius: 4px !important;
+  padding: 8px 12px !important;
+  margin: 2px 0 !important;
+  font-style: italic !important;
+  border-left: 3px solid #e8e8e8 !important;
+}
+
+.theme-slack .reaction {
+  background: #f8f8f8 !important;
+  border: 1px solid #e8e8e8 !important;
+  border-radius: 12px !important;
+  padding: 2px 6px !important;
+  margin: 2px 4px 2px 0 !important;
+  font-size: 12px !important;
+  display: inline-block !important;
+}
+
+.theme-slack .attachment {
+  background: #f8f8f8 !important;
+  border: 1px solid #e8e8e8 !important;
+  border-radius: 4px !important;
+  padding: 8px !important;
+  margin-top: 4px !important;
+}
